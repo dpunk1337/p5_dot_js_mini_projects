@@ -8,7 +8,7 @@ function setup() {
   createCanvas(400, 400);
   d[0]=width/3;
   d[1]=height/3;
-  
+
   createTile()
 
 }
@@ -19,8 +19,8 @@ function draw() {
   showTile();
   checkForWinnerZero();
   checkForWinnerCross();
-  
-  
+
+
 }
 
 function showGrid()
@@ -71,7 +71,7 @@ function createTile()
   for(let j=0;j<3;j++)
   {
  tiles.push( new Tile((i+0.5)*d[0],(j+0.5)*d[1]));
-    
+
   }
   }
 }
@@ -91,6 +91,14 @@ if(tiles[4].zero)
 if(tiles[0].zero)
 {
 if(tiles[8].zero)
+{
+win();
+noLoop();
+}
+}
+if(tiles[3].zero)
+{
+if(tiles[5].zero)
 {
 win();
 noLoop();
@@ -133,7 +141,7 @@ win();
 noLoop();
 }
 }
-  
+
 }
 else if(tiles[8].zero)
 {
@@ -153,7 +161,7 @@ win();
 noLoop();
 }
 }
-  
+
 }
 }
 }
@@ -165,6 +173,14 @@ if(tiles[4].cross)
 if(tiles[0].cross)
 {
 if(tiles[8].cross)
+{
+win();
+noLoop();
+}
+}
+if(tiles[3].cross)
+{
+if(tiles[5].cross)
 {
 win();
 noLoop();
@@ -207,7 +223,7 @@ win();
 noLoop();
 }
 }
-  
+
 }
 else if(tiles[8].cross)
 {
@@ -227,7 +243,7 @@ win();
 noLoop();
 }
 }
-  
+
 }
 }
 }
@@ -253,4 +269,3 @@ strokeWeight(height/40);
 fill(0,255,0);
 text('It\'s a draw!!!!',width/2,height/2);
 }
-
